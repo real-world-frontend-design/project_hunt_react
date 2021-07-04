@@ -1,13 +1,23 @@
-import React from 'react';
+import React , {useEffect, useState} from 'react';
+import {useDispatch} from 'react-redux';
+import { BrowserRouter, Route } from 'react-router-dom'
+import Articles from './projects/Projects';
+import { getProjects } from '../actions/project';
 
 const App = () => {
+
+    const dispatch = useDispatch();
+    const [currentSlug, setCurrentSlug] = useState("");
+
+    useEffect(() => {
+        dispatch(getProjects());
+    }, [dispatch])
+
     return (
-        <>
-            <h1>Life is sort explore it work hard to achieve more</h1>
-            <h1>and dont waste time by sleeping and watch tv</h1>
-            <h1>we wanna leave a life and make other's life greater</h1>
-        </>
-    );
+        <BrowserRouter>
+            <Route component={Articles} path="/" exact setCurrentSlug={setCurrentSlug}/>
+        </BrowserRouter>
+    );    
 }
 
 export default App;
