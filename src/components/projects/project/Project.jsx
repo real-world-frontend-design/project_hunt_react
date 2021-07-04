@@ -23,7 +23,7 @@ export default function MediaCard({ project }) {
               className={classes.media}
               //TODO: add the media image 
               //image={project.image}
-              image="https://deviniti.com/wp-content/uploads/2018/07/DevOps-6-reasons.png"
+              image="#"
               title="media_content"
             />
             <CardContent style={{paddingBottom: "0"}}>
