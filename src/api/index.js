@@ -7,3 +7,6 @@ export const fetchProjects = () => API.get('/projects');
 
 //POST article
 export const postArticle = (newPost) => API.post('/projects', newPost);
+
+//register a user
+export const signUp = (formData) => API.post('/users/register', formData);
