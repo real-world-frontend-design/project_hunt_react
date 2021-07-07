@@ -10,3 +10,6 @@ export const postArticle = (newPost) => API.post('/projects', newPost);
 
 //register a user
 export const signUp = (formData) => API.post('/users/register', formData);
+
+//login a user
+export const login = (formData) => API.post('/users/login', formData);
