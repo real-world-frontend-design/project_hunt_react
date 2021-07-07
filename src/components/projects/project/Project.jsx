@@ -9,6 +9,7 @@ import CardActions from "@material-ui/core/CardActions";
 import CardContent from "@material-ui/core/CardContent";
 import CardMedia from "@material-ui/core/CardMedia";
 import Typography from "@material-ui/core/Typography";
+import { Link } from 'react-router-dom';
 import { Avatar } from "@material-ui/core";
 
 export default function MediaCard({ project }) {
@@ -16,6 +17,11 @@ export default function MediaCard({ project }) {
 
   return (
     <div>
+      <div style={{position: 'fixed', top: 30, right: 20, border: 0 }}>
+      <Link to="/create" style={{textDecoration: "none"}}>
+      <button>+ Create New</button>
+      </Link>
+      </div>
       <div className={classes.center}>
         <Card className={classes.root}>
           <CardActionArea>
