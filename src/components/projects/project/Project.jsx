@@ -5,6 +5,7 @@ import moment from 'moment';
 import useStyle from './style';
 import FavoriteIcon from "@material-ui/icons/Favorite";
 import DeleteIcon from "@material-ui/icons/Delete";
+import Button from "@material-ui/core/Button";
 import CardActions from "@material-ui/core/CardActions";
 import CardContent from "@material-ui/core/CardContent";
 import CardMedia from "@material-ui/core/CardMedia";
@@ -12,7 +13,12 @@ import Typography from "@material-ui/core/Typography";
 import { Link } from 'react-router-dom';
 import { Avatar } from "@material-ui/core";
 
+import { useDispatch } from "react-redux";
+import { deleteProject } from "../../../actions/project";
+
 export default function MediaCard({ project }) {
+  
+  const dispatch = useDispatch();
   const classes = useStyle();
 
   return (
@@ -46,15 +52,17 @@ export default function MediaCard({ project }) {
                 {/* TODO: the little description with a read more button  */}
               </Typography>
             </CardContent>
-          </CardActionArea>
-          <CardActions>
+           </CardActionArea>
+           <CardActions>
               <FavoriteIcon />
-              <div className={classes.right}> 
-              <DeleteIcon style={{textAlign: "right"}}/>
+              <div className={classes.right}>
+              <Button style={{textAlign: "right"}} size="small" color="primary" onClick={() => dispatch(deleteProject(project.slug))}  >
+                <DeleteIcon/>
+              </Button> 
               </div>
               {/* TODO: onClick favorite_count ++ */}
               {/* TODO: user authenticated delete button */}
-          </CardActions>
+            </CardActions>
         </Card>
       </div>
     </div>

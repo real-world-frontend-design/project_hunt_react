@@ -14,7 +14,16 @@ export const createProject = (post, history) => async (dispatch) => {
     try {
         const {data} = await api.postProject(post);
         dispatch({type: CREATE, payload: data});
-        history.push('/home');
+        history.push('/');
+    } catch (e) {
+        console.log(e);
+    }
+}
+
+export const deleteProject = (slug) => async (dispatch) => {
+    try {
+        await api.deleteProject(slug);
+        dispatch({ type: 'DELETE', payload: slug });
     } catch (e) {
         console.log(e);
     }

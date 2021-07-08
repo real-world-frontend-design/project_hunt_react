@@ -10,7 +10,7 @@ import { getProjects } from '../actions/project';
 const App = () => {
 
     const dispatch = useDispatch();
-    const [currentSlug, setCurrentSlug] = useState("");
+    const [, setCurrentSlug] = useState("");
 
     useEffect(() => {
         dispatch(getProjects());

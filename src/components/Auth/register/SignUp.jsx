@@ -10,7 +10,7 @@ const initialState = { "username": '', "email": '', "password": '' };
 
 const Register = () => {
     const [form, setForm] = useState(initialState);
-    const [isSignUp, setIsSignUp] = useState(true);
+    const isSignUp = true;
     const dispatch = useDispatch();
     const history = useHistory();
     const classes = useStyle();

@@ -9,11 +9,14 @@ API.interceptors.request.use((req) => {
     return req;
 });
 
-//GET articles
+//GET all projects
 export const fetchProjects = () => API.get('/projects');
 
-//POST article
+//POST a project
 export const postProject = (newPost) => API.post('/projects/create', newPost);
+
+//DELETE a project
+export const deleteProject = (slug) => API.delete(`/projects/delete/${slug}`);
 
 //register a user
 export const signUp = (formData) => API.post('/users/register', formData);
