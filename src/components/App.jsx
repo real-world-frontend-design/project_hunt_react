@@ -18,7 +18,7 @@ const App = () => {
 
     return (
         <BrowserRouter>
-            <Route component={ Articles } path="/home" exact setCurrentSlug={setCurrentSlug}/>
+            <Route component={ Articles } exact path="/" setCurrentSlug={setCurrentSlug}/>
             <Route component={ Register } exact path="/register" />
             <Route component={ Login } exact path="/login" />
             <Route component={ Form } exact path="/create" />
