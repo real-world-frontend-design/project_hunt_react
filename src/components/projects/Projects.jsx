@@ -25,6 +25,7 @@ const Projects = ({ setCurrentSlug }) => {
                     </div>
                     ))}
             </div>
+            
         )
     )
 }

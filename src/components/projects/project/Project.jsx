@@ -64,7 +64,7 @@ export default function MediaCard({ project }) {
               {/* TODO: user authenticated delete button */}
             </CardActions>
         </Card>
-      </div>
+      </div>     
     </div>
   );
 }
