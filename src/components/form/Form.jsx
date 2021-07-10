@@ -39,6 +39,8 @@ const Form = ({currentSlug, setCurrentSlug}) => {
         )
     }
 
+    //TODO: make it mobile responsive
+
     return (
         <div className={`${classes.center} ${classes.root}`}>
             <form autoComplete="off" onSubmit={handleSubmit} noValidate className={classes.form}> 
