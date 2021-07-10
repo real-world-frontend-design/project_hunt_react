@@ -30,4 +30,4 @@ const Projects = ({ setCurrentSlug }) => {
     )
 }
 
-export default Projects
+export default Projects;
