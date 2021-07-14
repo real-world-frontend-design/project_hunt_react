@@ -1,5 +1,6 @@
 import React from 'react';
-import { BrowserRouter, Route, Redirect } from 'react-router-dom';
+import { BrowserRouter, Switch, Route, Redirect } from 'react-router-dom';
+import Navbar from './navbar/Navbar';
 import Home from './Home/Home';
 import Register from './Auth/register/SignUp';
 import Login from './Auth/login/Login'
@@ -12,6 +13,8 @@ const App = () => {
 
     return (
         <BrowserRouter>
+            <Navbar />
+            <Switch>
             <Route path="/" exact component={() => <Redirect to="/projects" />} />
             <Route path="/projects" exact  component={ Home } />
             <Route path="/projects/search" component={ Home } />
@@ -19,6 +22,7 @@ const App = () => {
             <Route path="/register" exact component={ Register } />
             <Route path="/login" exact component={ () => (!user ? <Login/> : <Redirect to="/projects"/>) } />
             <Route component={ Form } exact path="/create" />
+            </Switch>
         </BrowserRouter>
     );    
 }
