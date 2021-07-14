@@ -30,9 +30,7 @@ export default function MediaCard({ project, setCurrentSlug }) {
   return (
     <div>
       <div style={{position: 'fixed', top: 30, right: 20, border: 0 }}>
-      <Link to="/create" style={{textDecoration: "none"}}>
-      <button>+ Create New</button>
-      </Link>
+      
       </div>
       <div className={classes.center}>
         <Card className={classes.root}>
