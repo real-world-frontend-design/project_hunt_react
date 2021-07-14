@@ -6,6 +6,7 @@ import useStyle from './style';
 import FavoriteIcon from "@material-ui/icons/Favorite";
 import DeleteIcon from "@material-ui/icons/Delete";
 import Button from "@material-ui/core/Button";
+import ButtonBase from '@material-ui/core/ButtonBase'; 
 import CardActions from "@material-ui/core/CardActions";
 import CardContent from "@material-ui/core/CardContent";
 import CardMedia from "@material-ui/core/CardMedia";
@@ -13,13 +14,18 @@ import Typography from "@material-ui/core/Typography";
 import { Link } from 'react-router-dom';
 import { Avatar } from "@material-ui/core";
 
+import { useHistory } from "react-router-dom";
+
 import { useDispatch } from "react-redux";
 import { deleteProject } from "../../../actions/project";
 
-export default function MediaCard({ project }) {
+export default function MediaCard({ project, setCurrentSlug }) {
   
+  const history = useHistory();
   const dispatch = useDispatch();
   const classes = useStyle();
+
+  const openPost = (e) => history.push(`/projects/${project.slug}`);
 
   return (
     <div>
@@ -30,6 +36,12 @@ export default function MediaCard({ project }) {
       </div>
       <div className={classes.center}>
         <Card className={classes.root}>
+          <ButtonBase 
+          className={classes.cardAction}
+          component="span"
+          name="test"
+          onClick={openPost}
+          >
           <CardActionArea>
             <CardMedia
               className={classes.media}
@@ -53,6 +65,8 @@ export default function MediaCard({ project }) {
               </Typography>
             </CardContent>
            </CardActionArea>
+          </ButtonBase>
+
            <CardActions>
               <FavoriteIcon />
               <div className={classes.right}>

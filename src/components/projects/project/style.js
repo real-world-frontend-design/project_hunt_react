@@ -32,5 +32,22 @@ export default makeStyles(() => ({
       left: "20px",
       color: "black",
       fontWeight: "bold"
-    }
+    },
+    details: {
+      display: 'flex',
+      justifyContent: 'space-between',
+      margin: '20px',
+    },
+    title: {
+      padding: '0 16px',
+    },
+    cardActions: {
+      padding: '0 16px 8px 16px',
+      display: 'flex',
+      justifyContent: 'space-between',
+    },
+    cardAction: {
+      display: 'block',
+      textAlign: 'initial',
+    },
   }));

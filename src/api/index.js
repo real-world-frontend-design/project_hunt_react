@@ -12,6 +12,9 @@ API.interceptors.request.use((req) => {
 //GET all projects
 export const fetchProjects = () => API.get('/projects');
 
+//GET project by slug
+export const fetchProject = (slug) => API.get(`/projects/${slug}`);
+
 //POST a project
 export const postProject = (newPost) => API.post('/projects/create', newPost);
 

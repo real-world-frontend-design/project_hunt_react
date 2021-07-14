@@ -19,7 +19,7 @@ const Projects = ({ setCurrentSlug }) => {
         </div>
         :(
             <div style={{paddingTop: "50px"}}>
-                {projects.map((project) => (
+                {projects?.map((project) => (
                     <div key={project.slug} >
                         <Project project={project} setCurrentSlug={setCurrentSlug} />
                     </div>
