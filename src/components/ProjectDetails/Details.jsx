@@ -3,6 +3,8 @@ import useStyles from './styles';
 import { useDispatch, useSelector } from 'react-redux';
 import { useParams, useHistory } from 'react-router-dom';
 
+//TODO: font-family: BwSurcoRegular,Helvetica Neue,Arial,Helvetica,sans-serif;
+
 
 import { getProject } from '../../actions/project';
 
@@ -14,7 +16,7 @@ const Details = () => {
     const dispatch = useDispatch();
     const { slug } = useParams();
 
-    console.log('project details', project.project.slug);
+    console.log('project details', project);
 
     useEffect(() => {
         dispatch(getProject(slug));
