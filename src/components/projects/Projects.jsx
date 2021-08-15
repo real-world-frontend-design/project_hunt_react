@@ -7,11 +7,15 @@ import { useSelector } from 'react-redux';
 // TODO: export all the styles code from styles.js file
 const Projects = ({ setCurrentSlug }) => {
 
-    const projects = useSelector((state) => state.projects)
+    const {projects, isLoading} = useSelector((state) => state.projects)
     console.log(projects);
 
+    if(!projects?.length && !isLoading) {
+        return 'No projects';
+    }
+
     return (
-        !projects.length?        
+        isLoading?        
         <div style={{display: "flex", justifyContent: "center", alignItems: "center", height: "100vh"}}>
 
         <CircularProgress style={{display: "flex", justifyContent: "center", alignItems: "center"}} />  

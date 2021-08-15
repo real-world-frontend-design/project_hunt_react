@@ -1,10 +1,12 @@
 import * as api from '../api';
-import { FETCH_ALL, CREATE, FETCH_PROJECT } from '../constants/actionTypes';
+import { START_LOADING, STOP_LOADING, FETCH_ALL, CREATE, FETCH_PROJECT } from '../constants/actionTypes';
 
 export const getProjects = () => async (dispatch) => {
     try {
+        dispatch({type: START_LOADING});
         const { data } = await api.fetchProjects();
         dispatch({ type: FETCH_ALL, payload: data });
+        dispatch({ type: STOP_LOADING });
     } catch (e) {
         console.log(e);
     }
@@ -21,6 +23,7 @@ export const getProject = (id) => async (dispatch) => {
 
 export const createProject = (post, history) => async (dispatch) => {
     try {
+        dispatch({ type: START_LOADING });
         const {data} = await api.postProject(post);
         dispatch({type: CREATE, payload: data});
         history.push('/');
